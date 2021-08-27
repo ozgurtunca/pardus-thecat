@@ -1,0 +1,21 @@
+/* 
+  @package pardusthecat
+*/
+/* Generic */
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.background-image {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*  Header */
+.header-container {
+  position: relative;
+  display: block;
+  height: 326px;
+}

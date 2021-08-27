@@ -1,0 +1,53 @@
+/* 
+  @package pardus-thecat
+*/
+
+body {
+  background-color: #a5a99d;
+}
+.pardus-general-form,
+.pardus-sidebar-preview {
+  display: inline-blog;
+  float: left;
+}
+
+.pardus-sidebar-preview {
+  width: 280px;
+  background-color: #213069;
+  padding: 20px;
+  text-align: center;
+  margin-right: 20px;
+}
+h1.pardus-username,
+h2.pardus-description {
+  font-weight: 100;
+  color: #fff;
+}
+h1.sunset-usrname {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+h2.sunset-usrname {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+.image-container {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: #c1c1c1;
+  border-style: solid;
+  margin: 20px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
