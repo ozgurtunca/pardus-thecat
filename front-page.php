@@ -1,1 +1,1 @@
-This is a frontpage
+<?php the_title(); ?>

@@ -36,6 +36,7 @@ function pardus_portfolio_post_type() {
   $args = array (
     'labels'          => $labels,
     'show_ui'         => true,
+    'public'           => true,
     'show_in_menu'    => true,
     'show_in_rest'    => true,
     'capability'      => 'post',
@@ -46,7 +47,7 @@ function pardus_portfolio_post_type() {
     'menu_icon'       => 'dashicons-portfolio',
     'supports'        => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments')
   );
-  register_post_type( 'pardus-artwork-post', $args);
+  register_post_type( 'portfolio', $args);
 }
 
 // CONTACT CPT
