@@ -1,0 +1,1 @@
+This is Portfolio Custom Post Type Single Post page
