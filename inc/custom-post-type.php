@@ -135,4 +135,3 @@ function pardus_save_email_data( $post_id ){
   $myData = sanitize_text_field($_POST['pardus_contact_email_field']);
   update_post_meta( $post_id, '_contact_email_value_key', $myData );
 }
-// Portfolio function from callback 
