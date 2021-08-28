@@ -31,7 +31,9 @@ function pardus_portfolio_post_type() {
     'name'            => 'Portfolio',
     'singular_name'   => 'Artwork',
     'menu_name'       => 'Portfolio',
-    'name_admin_bar'  => 'Artwork'
+    'name_admin_bar'  => 'Artwork',
+    'add_new'         => 'New Artwork',
+    'add_new_item'    => 'Add New Artwork'
   );
   $args = array (
     'labels'          => $labels,
