@@ -1,0 +1,25 @@
+{
+  "name": "pardus-thecat",
+  "version": "1.0.0",
+  "description": "Pardus TheCat Wordpress Theme",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozgurtunca/pardus-thecat.git"
+  },
+  "author": "Ozgur M Tunca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozgurtunca/pardus-thecat/issues"
+  },
+  "homepage": "https://github.com/ozgurtunca/pardus-thecat#readme",
+  "devDependencies": {
+    "sass": "^1.38.2"
+  }
+}

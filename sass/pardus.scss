@@ -3,14 +3,15 @@
 *
 *
 */
+
 /* Generic */
+
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap");
 body,
 html {
   height: 100%;
   margin: 0;
 }
-
 body {
   font-family: "Raleway", "Helvetica Neue", "Helvetica";
 }
@@ -19,12 +20,12 @@ body {
   display: table;
   width: 100%;
   height: 100%;
-}
-.table .table-cell {
-  display: table-cell;
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;
+  .table-cell {
+    display: table-cell;
+    width: 100%;
+    height: 0100%;
+    vertical-align: middle;
+  }
 }
 
 .background-image {
@@ -32,7 +33,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 /*  Header */
 .header-container {
   position: relative;
@@ -40,16 +40,12 @@ body {
   height: 326px;
   text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.4);
 }
-
 .site-description {
   font-size: 14px;
   color: #fff;
   margin-top: 1em;
 }
-
 .site-title {
   color: #fff;
   font-size: 80px;
 }
-
-/*# sourceMappingURL=pardus.css.map */
