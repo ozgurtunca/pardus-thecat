@@ -4,7 +4,7 @@ This is the template for header
 @package pardusthecat
 */
 ?>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?>> 
 
 <head>
   <title><?php bloginfo('name'); wp_title(); ?></title>
@@ -19,25 +19,32 @@ This is the template for header
 </head>
   
 <body <?php body_class(); ?>>
-  <div class="container">
+  
+<div class="container">
+  <div class="row">
+    <div class="corow-xs-12">
 
-    <div class="row">
+      <header id="header" class="header-container background-image text-center">
+        <div class="header-content table">
+          <div class="table-cell">
+            <h1 class="site-title pardus-icon">
+              <span class="pardus-logo"></span>
+              <span class="d-none"><?php bloginfo( 'name' ); ?></span></h1>
+            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+          </div><!-- table-cell -->
+        </div><!-- .header-content  table -->
 
-      <div class="corow-xs-12">
-        <div id="header" class="header-container background-image text-center">
-          <div class="header-content table">
-            <div class="table-cell">
-              <h1 class="site-title pardus-icon">
-                <span class="pardus-logo"></span>
-                <span class="d-none"><?php bloginfo( 'name' ); ?></span></h1>
-              <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-            </div><!-- table-cell -->
-          </div><!-- .header-content  table -->
-        </div><!-- .header  -->
         <div class="nav-container">
-            
-        </div><!-- .nav-container -->
-      </div><!-- .header-container -->
-    </div><!-- .col-xs-12 -->
+          <nav class="navbar navbar-inverse">
+            <?php wp_nav_menu( array(
+              'theme_location'        => 'primary',
+              'containter'            => false,
+              'menu_class'            =>'nav navbar-pardus'
+            ) ); ?>
+          </nav>  
+        </div>
 
-  </div><!-- .container -->
+      </header><!-- .header  -->
+    </div><!-- .corow-xs-12 -->
+  </div><!-- .header-container -->
+</div><!-- .col-xs-12 -->

@@ -15,9 +15,3 @@ if ( file_exists( dirname( __FILE__ ) . '/inc/kirki/kirki.php' ) ) {
   include_once( dirname( __FILE__ ) . '/inc/kirki/kirki.php' ); 
 }; 
 
-function pardus_features() {
-  add_theme_support( 'editor-styles' );
-  add_theme_support('title_tag');
-}
-
-add_action('after_setup_theme', 'pardus_features');
