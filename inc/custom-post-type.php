@@ -1,10 +1,10 @@
 <?php 
-/*
-    @package pardusthecat
-
-    ========================================
-          CUSTOM POST TYPES
-    ========================================
+/**
+*     @package pardusthecat
+*
+*     ====================================================================
+*             CUSTOM POST TYPES
+*     ====================================================================
 */
 $contact_form = get_option( 'activate_contact_form' );
 if( @$contact_form == 1 ) {
@@ -28,12 +28,12 @@ if( @$portfolio == 1 ) {
 // Portfolio CPT
 function pardus_portfolio_post_type() {
   $labels = array(
-    'name'            => 'Portfolio',
-    'singular_name'   => 'Artwork',
-    'menu_name'       => 'Portfolio',
-    'name_admin_bar'  => 'Artwork',
-    'add_new'         => 'New Artwork',
-    'add_new_item'    => 'Add New Artwork'
+    'name'            => __( 'Portfolio', 'pardus-thecat' ),
+    'singular_name'   => __( 'Artwork', 'pardus-thecat'  ),
+    'menu_name'       => __( 'Portfolio', 'pardus-thecat'  ),
+    'name_admin_bar'  => __( 'Artwork', 'pardus-thecat'  ),
+    'add_new'         => __( 'New Artwork', 'pardus-thecat'  ),
+    'add_new_item'    => __( 'Add New Artwork', 'pardus-thecat'  ),
   );
   $args = array (
     'labels'          => $labels,
@@ -55,10 +55,12 @@ function pardus_portfolio_post_type() {
 // CONTACT CPT
 function pardus_contactform_post_type() {
   $labels = array(
-    'name'            => 'Messages',
-    'singular_name'   => 'Message',
-    'menu_name'       => 'Messages',
-    'name_admin_bar'  => 'Message'
+    'name'            => __( 'Messages', 'pardus-thecat' ),
+    'singular_name'   => __( 'Message', 'pardus-thecat' ),
+    'menu_name'       => __( 'Messages', 'pardus-thecat' ),
+    'name_admin_bar'  => __( 'Messages', 'pardus-thecat' ),
+    'add_new'         => __( 'New Message', 'pardus-thecat'  ),
+    'add_new_item'    => __( 'Add New Message', 'pardus-thecat'  ),
   );
   $args = array (
     'labels'          => $labels,
@@ -76,10 +78,8 @@ function pardus_contactform_post_type() {
 // CONTACT FORM POST TYPE COLUMNS
 function pardus_set_form_columns( $columns ){
   $newColumns = array();
-  $newColumns['title'] = 'Full Name';
-  $newColumns['message'] = 'Message';
-  $newColumns['email'] = 'E-mail';
-  $newColumns['date'] = 'Date';
+  $newColumns['title'] = __( 'Full Name', 'pardus-thecat' );
+  $newColumns['date'] = __( 'Date', 'pardus-thecat' );
   return $newColumns;
 }
 
@@ -100,14 +100,13 @@ function pardus_set_custom_column( $column, $post_id){
 // PORTFOLIO POST TYPE COLUMNS
 function pardus_set_portfolio_columns( $columns ){
   $newColumns = array();
-  $newColumns['title'] = 'Artwork Title';
-  $newColumns['riv_post_thumbs'] = 'Thumbnail';
-  $newColumns['price'] = 'Price';
-  $newColumns['sale_price'] = 'Sale Price';
-  $newColumns['soldon'] = 'Sold on';
-  $newColumns['link'] = 'Link';
-  $newColumns['date'] = 'Post Date';
-  return $newColumns;
+  $newColumns['title'] = __( 'Artwork Title', 'pardus-thecat' );
+  $newColumns['riv_post_thumbs'] = __( 'Thumbnail', 'pardus-thecat' );
+  $newColumns['price'] = __( 'Price', 'pardus-thecat' );
+  $newColumns['sale_price'] = __( 'Sale Price', 'pardus-thecat' );
+  $newColumns['soldon'] = __( 'Sold on', 'pardus-thecat' );
+  $newColumns['link'] = __( 'Link', 'pardus-thecat' );
+  $newColumns['date'] = __( 'Post Date', 'pardus-thecat' );
 }
 
 

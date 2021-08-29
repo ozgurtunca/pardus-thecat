@@ -1,14 +1,13 @@
 <?php 
-/*
-    @package pardusthecat
-
-    =================================================================
-          TGM To force install and activation of required plugin
-    =================================================================
-
-    * The TGM Plugin must be install. 
-    This file uses classes/functions of TGM PLugin to require pluigins to be installed
-    
+/**
+*     @package pardusthecat
+*
+*     ====================================================================
+*             TGM To force install and activation of required plugin
+*     ====================================================================
+*
+*				The TGM Plugin must be install. 
+*				This file uses classes/functions of TGM PLugin to require pluigins to be installed
 */
 add_action( 'tgmpa_register', 'setup_plugins' );
 
@@ -45,9 +44,9 @@ $config_array = array(
     'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
     'has_notices'  => true,                    // Show admin notices or not.
     'dismissable'  => false,                    // If false, a user cannot dismiss the nag message.
-    'dismiss_msg'  => 'Please be sure that you install and activate reqired plugins.',                      // If 'dismissable' is false, this message will be output at top of nag.
+    'dismiss_msg'  => __( 'Please be sure that you install and activate reqired plugins', 'pardus-thecat' ), // If 'dismissable' is false, this message will be output at top of nag.
     'is_automatic' => true,                   // Automatically activate plugins after installation or not.
-    'message'      => 'Please be sure that you install and activate reqired plugins.',                      // Message to output right before the plugins table.
+    'message'      => __( 'Please be sure that you install and activate reqired plugins', 'pardus-thecat' ),  // Message to output right before the plugins table.
   );
 $plugins = $required_lugins_array;
 $config = $config_array;

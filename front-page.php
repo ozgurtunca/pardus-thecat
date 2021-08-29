@@ -1,1 +1,3 @@
-<?php the_title(); ?>
+<?php get_header(); ?>
+
+<?php get_footer(); ?>

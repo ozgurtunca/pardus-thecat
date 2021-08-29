@@ -1,10 +1,11 @@
 <?php 
-/*
-    @package pardusthecat
-
-    ====================
-      THEME SUPPORT
-    ====================
+/**
+*     @package pardusthecat
+*
+*     ====================================================================
+*             THEME SUPPORT
+*     ====================================================================
+*
 */
 $options = get_option( 'post_formats' );
 $formats = array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'chat' );

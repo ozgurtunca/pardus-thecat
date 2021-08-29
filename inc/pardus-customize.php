@@ -1,14 +1,13 @@
 <?php 
-/*
-    @package pardusthecat
-
-    ========================================================
-          CUSTOMIZE PARDUS WITH KIRKI PLUGIN
-    ========================================================
-
-    * The Kirki Plugin must be install. 
-    This file uses classes/functions of Kirki PLugin
-
+/**
+*     @package pardusthecat
+*
+*     ====================================================================
+*             CUSTOMIZE PARDUS WITH KIRKI PLUGIN
+*     ====================================================================
+*
+*       The Kirki Plugin must be install. 
+*       This file uses classes/functions of Kirki PLugin
 */
 function mytheme_kirki_sections( $wp_customize ) {
 	/**

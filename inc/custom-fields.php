@@ -1,9 +1,10 @@
-<? /*
-    @package pardusthecat
-
-    ====================================================================
-          ADD CUSTOM FIELDS WITF Advanced Custom Fields Plugin
-    ====================================================================
+<? 
+/**
+*     @package pardusthecat
+*
+*     ====================================================================
+*             ADD CUSTOM FIELDS WITF Advanced Custom Fields Plugin
+*     ====================================================================
 */
 
 if( function_exists('acf_add_local_field_group') ):
