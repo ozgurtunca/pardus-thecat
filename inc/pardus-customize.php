@@ -28,6 +28,7 @@ function mytheme_kirki_sections( $wp_customize ) {
  		'panel'       => 'backgrounds',
  	) );
 
+
      $wp_customize->add_section( 'main_background', array(
  		'title'       => __( 'Main Background', 'kirki' ),
  		'priority'    => 20,
