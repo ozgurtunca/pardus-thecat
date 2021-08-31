@@ -18,7 +18,7 @@
  
 function mytheme_kirki_sections( $wp_customize ) {
 
-    	Kirki::add_panel( $panel, $settings );
+    	
  //=============================================================
  // Remove Default Sections   
  //=============================================================
@@ -31,132 +31,7 @@ function mytheme_kirki_sections( $wp_customize ) {
 
 // Add panels
 
-$settings = array(
-    'theme' => 'pardus-thecat',
-);
-
-$panels = array(
-    'general'      => array(
-        'priority' => 10,
-        'title'    => esc_html__( 'General', 'martfury' ),
-    ),
-    'typography'   => array(
-        'priority' => 20,
-        'title'    => esc_html__( 'Typography', 'martfury' ),
-    ),
-    // Styling
-    'styling'      => array(
-        'title'    => esc_html__( 'Styling', 'martfury' ),
-        'priority' => 30,
-    ),
-    'header'       => array(
-        'priority' => 50,
-        'title'    => esc_html__( 'Header', 'martfury' ),
-    ),
-    'woocommerce'  => array(
-        'priority' => 60,
-        'title'    => esc_html__( 'Woocommerce', 'martfury' ),
-    ),
-    'catalog'      => array(
-        'priority' => 60,
-        'title'    => esc_html__( 'Catalog', 'martfury' ),
-    ),
-    'product_page' => array(
-        'priority' => 60,
-        'title'    => esc_html__( 'Product Page', 'martfury' ),
-    ),
-    'vendors'      => array(
-        'priority' => 60,
-        'title'    => esc_html__( 'Vendors', 'martfury' ),
-    ),
-    'blog'         => array(
-        'title'    => esc_html__( 'Blog', 'martfury' ),
-        'priority' => 70,
-    ),
-    'pages'        => array(
-        'title'    => esc_html__( 'Pages', 'martfury' ),
-        'priority' => 80,
-    ),
-    'footer'       => array(
-        'title'    => esc_html__( 'Footer', 'martfury' ),
-        'priority' => 90,
-    ),
-);
-
-$sections = array(
-    // Styling
-    'styling_general'             => array(
-        'title'       => esc_html__( 'General', 'martfury' ),
-        'description' => '',
-        'priority'    => 210,
-        'capability'  => 'edit_theme_options',
-        'panel'       => 'styling',
-    ),
-    'color_scheme'                => array(
-        'title'       => esc_html__( 'Color Scheme', 'martfury' ),
-        'description' => '',
-        'priority'    => 210,
-        'capability'  => 'edit_theme_options',
-        'panel'       => 'styling',
-    ),
-    'newsletter'                  => array(
-        'title'       => esc_html__( 'NewsLetter', 'martfury' ),
-        'description' => '',
-        'priority'    => 210,
-        'capability'  => 'edit_theme_options',
-        'panel'       => 'general',
-    ),
-);
-
-    $fields = array(
-		// NewsLetter
-		'newsletter_popup'                        => array(
-			'type'        => 'toggle',
-			'label'       => esc_html__( 'Enable NewsLetter Popup', 'martfury' ),
-			'default'     => 0,
-			'section'     => 'newsletter',
-			'priority'    => 10,
-			'description' => esc_html__( 'Check this option to show newsletter popup.', 'martfury' ),
-		),
-		'newsletter_home_popup'                   => array(
-			'type'        => 'toggle',
-			'label'       => esc_html__( "Show in Homepage", 'martfury' ),
-			'default'     => 1,
-			'section'     => 'newsletter',
-			'priority'    => 10,
-			'description' => esc_html__( 'Check this option to enable newsletter popup in the homepage.', 'martfury' ),
-		),
-		'newsletter_bg_image'                     => array(
-			'type'     => 'image',
-			'label'    => esc_html__( 'Background Image', 'martfury' ),
-			'default'  => '',
-			'section'  => 'newsletter',
-			'priority' => 20,
-		),
-		'newsletter_content'                      => array(
-			'type'     => 'textarea',
-			'label'    => esc_html__( 'Content', 'martfury' ),
-			'default'  => '',
-			'section'  => 'newsletter',
-			'priority' => 20,
-		),
-    )
-
-
-$settings['panels']   = apply_filters( 'martfury_customize_panels', $panels );
-$settings['sections'] = apply_filters( 'martfury_customize_sections', $sections );
-$settings['fields']   = apply_filters( 'martfury_customize_fields', $fields );
-
-foreach ( $settings['panels'] as $panel => $settings ) {
-    Kirki::add_panel( $panel, $settings );
-}
-foreach ( $settings['sections'] as $section => $settings) {
-    Kirki::add_section( $section, $settings );
-}
-foreach ( $this->config['fields'] as $name => $settings ) {
-    Kirki::add_field( $this->config['theme'], $settings );
-}
-/*	$wp_customize->add_panel( 'fl-general', array(
+	$wp_customize->add_panel( 'fl-general', array(
 		'priority'    => 10,
 		'title'       => esc_html__( 'General', 'kirki' ),
 	) );
@@ -205,11 +80,6 @@ foreach ( $this->config['fields'] as $name => $settings ) {
     'priority'    => 20,
     'panel'       => 'typography',
     ) );
-
-
-
-*/
-
 }
 add_action( 'customize_register', 'mytheme_kirki_sections' );
 
