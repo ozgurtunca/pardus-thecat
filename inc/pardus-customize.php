@@ -1,35 +1,123 @@
 <?php 
 /**
-*     @package pardusthecat
+*       @package pardusthecat
 *
-*     ====================================================================
+*====================================================================
 *             CUSTOMIZE PARDUS WITH KIRKI PLUGIN
-*     ====================================================================
+*====================================================================
 *
 *       The Kirki Plugin must be install. 
 *       This file uses classes/functions of Kirki PLugin
-*
-*
-*
 */
+// Exit if accessed directly
+
+if ( ! class_exists( 'Kirki' ) ) {
+ return;
+}
+
+class Pardus_Customize {
+/**
+* Customize settings
+*
+* @var array
+*/
+
+ protected $config = array();
+
+/**
+* The class constructor
+*
+* @param array $config
+*/
+
+ public function __construct( $config ) {
+  $this->config = $config;
+		if ( ! class_exists( 'Kirki' ) ) {
+			return;
+		}
+		$this->register();
+	} // End function __construct()
+
+	/**
+	 * Register settings
+	 */
+	public function register() {
+        
+
+		/**
+		 * Add the theme configuration
+		 */
+		if ( ! empty( $this->config['theme'] ) ) {
+			Kirki::add_config(
+				$this->config['theme'], array(
+					'capability'  => 'edit_theme_options',
+					'option_type' => 'theme_mod',
+				)
+			);
+		}
+
+		/**
+		 * Add panels
+		 */
+		if ( ! empty( $this->config['panels'] ) ) {
+			foreach ( $this->config['panels'] as $panel => $settings ) {
+				Kirki::add_panel( $panel, $settings );
+			}
+		}
+
+		/**
+		 * Add sections
+		 */
+		if ( ! empty( $this->config['sections'] ) ) {
+			foreach ( $this->config['sections'] as $section => $settings ) {
+				Kirki::add_section( $section, $settings );
+			}
+		}
+
+        /**
+		 * Add fields
+		 */
+		if ( ! empty( $this->config['theme'] ) && ! empty( $this->config['fields'] ) ) {
+			foreach ( $this->config['fields'] as $name => $settings ) {
+				if ( ! isset( $settings['settings'] ) ) {
+					$settings['settings'] = $name;
+				}
+
+				Kirki::add_field( $this->config['theme'], $settings );
+			}
+		}
+    }  // End function register() 
+} // End class
+
  //=============================================================
  // Remove header image and widgets option from theme customizer
  //=============================================================
- 
-function mytheme_kirki_sections( $wp_customize ) {
+    function pardus_customize_modify( $wp_customize ) {
+        $wp_customize->get_section( 'title_tagline' )->panel     = 'fl-general';
+        $wp_customize->get_section( 'static_front_page' )->panel = 'fl-general';
+    }
+add_action( 'customize_register', 'pardus_customize_modify' );   
 
-    	
+
+function pardus_customize_settings() {
+
+        	
  //=============================================================
  // Remove Default Sections   
  //=============================================================
     $wp_customize->remove_section("colors");
-    $wp_customize->remove_section("title_tagline");
     $wp_customize->remove_section("background_image");
-    $wp_customize->remove_section("static_front_page");
     $wp_customize->remove_control("header_image");
     $wp_customize->remove_panel("widgets");
 
 // Add panels
+	/**
+	 * Customizer configuration
+	 */
+
+	$settings = array(
+		'theme' => 'martfury',
+	);
 
 	$wp_customize->add_panel( 'fl-general', array(
 		'priority'    => 10,
@@ -58,16 +146,6 @@ function mytheme_kirki_sections( $wp_customize ) {
 
 /// Add sections
 
-     $wp_customize->add_section( 'title_tagline', array(
- 		'title'       => esc_html__( 'Site Identity', 'kirki' ),
- 		'priority'    => 10,
- 		'panel'       => 'fl-general',
- 	) );
-     $wp_customize->add_section( 'static_front_page', array(
-        'title'       => esc_html__( 'Home Page Settings', 'kirki' ),
-        'priority'    => 10,
-        'panel'       => 'fl-general',
-    ) ); 
 
     $wp_customize->add_section( 'typography', array(
  		'title'       => esc_html__( 'Font Families', 'kirki' ),
@@ -83,7 +161,7 @@ function mytheme_kirki_sections( $wp_customize ) {
 }
 add_action( 'customize_register', 'mytheme_kirki_sections' );
 
-/*
+
 function mytheme_kirki_configuration() {
   return array( 'url_path'     => get_stylesheet_directory_uri() . '/inc/kirki/' );
 }
@@ -223,5 +301,3 @@ function mytheme_kirki_fields( $fields ) {
 }
 add_filter( 'kirki/fields', 'mytheme_kirki_fields' );
 
-
-*/
