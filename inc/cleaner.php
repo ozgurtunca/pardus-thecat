@@ -7,7 +7,7 @@
 *     =================================
 */
 
-/*  REMOVE REMOVE STRING FROM JS AND CSS  */ 
+/*  Remove strings from JS and CSS in head meta tags */ 
 function pardus_remove_wp_version_strings( $src ){
   global $wp_version;
   parse_str( parse_url($src, PHP_URL_QUERY ), $query );
