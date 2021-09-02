@@ -4,15 +4,15 @@
 *
 */
 /* Generic */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap");
 body,
 html {
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
 }
 
-body {
-  font-family: "Raleway", "Helvetica Neue", "Helvetica";
+.top-bar {
+  width: 100%;
+  background-color: aquamarine;
 }
 
 .table {
@@ -38,7 +38,6 @@ body {
   position: relative;
   display: block;
   height: 326px;
-  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .site-description {
@@ -50,6 +49,10 @@ body {
 .site-title {
   color: #fff;
   font-size: 80px;
+}
+
+.nav-container {
+  position: absolute;
 }
 
 /*# sourceMappingURL=pardus.css.map */

@@ -23,3 +23,17 @@ require get_template_directory() . '/inc/tgm_activation.php';
 // Kirki customizer
 require get_template_directory() . '/inc/pardus-customizer.php';
 
+// REMOVE WP EMOJI
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+function add_additional_class_on_li($classes, $item, $args) {
+ if(isset($args->add_li_class)) {
+     $classes[] = $args->add_li_class;
+ }
+ return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);

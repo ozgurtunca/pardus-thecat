@@ -6,49 +6,50 @@
 
 /* Generic */
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap");
 body,
 html {
-  height: 100%;
-  margin: 0;
+	height: 100%;
+	margin: 0 auto;
 }
 body {
-  font-family: "Raleway", "Helvetica Neue", "Helvetica";
+}
+.top-bar {
+	width: 100%;
+	background-color: aquamarine;
 }
 
 .table {
-  display: table;
-  width: 100%;
-  height: 100%;
-  .table-cell {
-    display: table-cell;
-    width: 100%;
-    height: 0100%;
-    vertical-align: middle;
-  }
+	display: table;
+	width: 100%;
+	height: 100%;
+	.table-cell {
+		display: table-cell;
+		width: 100%;
+		height: 0100%;
+		vertical-align: middle;
+	}
 }
 
 .background-image {
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 /*  Header */
 .header-container {
-  position: relative;
-  display: block;
-  height: 326px;
-  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.4);
+	position: relative;
+	display: block;
+	height: 326px;
 }
 .site-description {
-  font-size: 14px;
-  color: #fff;
-  margin-top: 1em;
+	font-size: 14px;
+	color: #fff;
+	margin-top: 1em;
 }
 .site-title {
-  color: #fff;
-  font-size: 80px;
+	color: #fff;
+	font-size: 80px;
 }
 .nav-container {
-  position: absolute;
+	position: absolute;
 }
