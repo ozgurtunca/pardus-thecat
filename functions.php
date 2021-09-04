@@ -42,6 +42,7 @@ add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
  * Register our sidebars and widgetized areas.
  *
  */
+
 function pardus_register_sidebars() {
 	// Register primary sidebars
 	$sidebars = array(
@@ -82,3 +83,16 @@ function pardus_register_sidebars() {
 
 }
 add_action( 'widgets_init', 'pardus_register_sidebars' );
+
+if ( ! function_exists( 'pardus_show_topbar' ) ) :
+	function pardus_show_topbar() {
+		$topbar        = apply_filters( 'pardus_get_topbar', pardus_get_option( 'topbar' ) );
+	//	$topbar_mobile = apply_filters( 'pardus_get_topbar', martfury_get_option( 'topbar_mobile' ) );
+		if ( ! intval( $topbar ) ) {
+			return;
+		}
+		get_template_part( 'template-parts/headers/topbar' );
+	}
+endif;
+
+add_action( 'pardus_before_header', 'pardus_show_topbar', 10 );

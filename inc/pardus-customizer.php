@@ -86,7 +86,28 @@ class Pardus_Customize {
    }
   } // End Add fields
  } // End function register
+ 
 } // End Class Pardus_Customize
+/**
+ * This is a short hand function for getting setting value from customizer
+ *
+ * @param string $name
+ *
+ * @return bool|string
+ */
+function pardus_get_option( $name ) {
+
+  global $pardus_customize;
+
+  $value = false;
+
+  if ( class_exists( 'Kirki' ) ) {
+    $value = Kirki::get_option( 'pardusthecat', $name );
+  } elseif ( ! empty( $pardus_customize ) ) {
+    $value = $pardus_customize->get_option( $name );
+  }
+  return apply_filters( 'pardus_get_option', $value, $name );
+} // End function pardus_get_option
 
 function pardus_customize_modify( $wp_customize ) {
  $wp_customize->get_section( 'title_tagline' )->panel     = 'general';
@@ -193,13 +214,34 @@ function pardus_customize_settings() {
 				),
 			),
   ),
+  'topbar_hover_color'                      => array(
+    'type'            => 'color',
+    'label'           => esc_html__( 'Hover Color', 'pardusthecat' ),
+    'default'         => '#f1f1d6',
+    'section'         => 'header_top_bar',
+    'priority'        => 40,
+    'active_callback' => array(
+     array(
+      'setting'  => 'topbar',
+      'operator' => '==',
+      'value'    => '1',
+     ),
+    ),
+       'transport'       => 'auto',
+       'output'         => array(
+         array(
+           'element'  => '#topbar a:hover',
+           'property' => 'color',
+         ),
+       ),
+   ),
   'topbar_custom_height'                                  => array(
    'type'        => 'toggle',
    'settings'    => 'topbar_custom_height',
    'label'       => esc_html__( 'Custom Top Bar Height', 'pardusthecat' ),
    'default'     => '0',
    'section'     => 'header_top_bar',
-   'priority'    => 40,
+   'priority'    => 50,
    'description' => esc_html__( 'Enable custom top bar height.', 'pardusthecat' ),
    'transport'       => 'auto',
   ),
@@ -209,7 +251,7 @@ function pardus_customize_settings() {
    'label'       => esc_html__( 'Top Bar Height', 'kirki' ),
    'description' => esc_html__( 'Set custom header topbar height.', 'kirki' ),
    'section'     => 'header_top_bar',
-   'priority'        => 50,
+   'priority'        => 60,
    'default'     => array(
    'height' => '100px', 
    ),

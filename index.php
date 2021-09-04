@@ -1,7 +1,1 @@
-<?php get_header();
-
-
-
-
-
-get_footer(); ?>
+This is index

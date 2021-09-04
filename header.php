@@ -22,18 +22,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page">
-  <div id="topbar" class="topbar topbar-dark">
-    <div class="pardus-container">
-      <div class="row topbar-row">
-        <div class="topbar-left topbar-sidebar col-xs-12 col-sm-12 col-md-5 hidden-xs hidden-sm">
-        <?php if ( is_active_sidebar( 'topbar-left' ) ) {
-						dynamic_sidebar( 'topbar-left' );
-					} ?>
-        </div>
-        <div class="topbar-right topbar-sidebar col-xs-12 col-sm-12 col-md-7 hidden-xs hidden-sm">
-        This is TopBar Right
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <?php do_action( 'pardus_before_header' ); ?>
+
+  <div id="content" class="site-content">
