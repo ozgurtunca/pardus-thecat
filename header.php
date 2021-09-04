@@ -22,6 +22,11 @@
 
 <body <?php body_class(); ?>>
 <div id="page">
-  <?php do_action( 'pardus_before_header' ); ?>
-
+  <?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) { 		?>  
+    <?php do_action( 'pardus_before_header' ); ?>
+    <header id="site-header" class="site-header <?php //martfury_header_class(); ?>">
+      <?php do_action( 'pardus_header' ); ?>
+    </header>
+  <?php } ?>
+	  <?php do_action( 'pardus_after_header' ); ?>
   <div id="content" class="site-content">
