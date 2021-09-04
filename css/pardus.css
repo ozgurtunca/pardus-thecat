@@ -10,9 +10,67 @@ html {
   margin: 0 auto;
 }
 
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 .top-bar {
   width: 100%;
-  background-color: aquamarine;
+  background-color: #0062d0;
+  color: white;
+}
+.top-bar a {
+  text-decoration: none;
+}
+
+#topbar a {
+  text-decoration: none;
+}
+#topbar a:hover {
+  color: chocolate;
+}
+
+.topbar-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.topbar-sidebar {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: auto;
+}
+
+.widget {
+  margin-bottom: 0;
+  line-height: 1;
+  padding: 0 20px;
+  position: relative;
+}
+.widget::after {
+  background-color: #e1e1e1;
+  width: 2px;
+  height: 14px;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pardus-container {
+  width: 1650px;
+  margin: 0 auto;
+}
+
+.header-top-bar {
+  background-color: black;
 }
 
 .table {

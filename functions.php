@@ -37,3 +37,48 @@ function add_additional_class_on_li($classes, $item, $args) {
  return $classes;
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function pardus_register_sidebars() {
+	// Register primary sidebars
+	$sidebars = array(
+        'header-bar'      => esc_html__( 'Header Bar', 'martfury' ),
+		'topbar-left'     => esc_html__( 'Topbar Left', 'martfury' ),
+		'topbar-right'    => esc_html__( 'Topbar Right', 'martfury' ),
+		'topbar-mobile'   => esc_html__( 'Topbar on Mobile', 'martfury' ),
+		'blog-sidebar'    => esc_html__( 'Blog Sidebar', 'martfury' ),
+		'post-sidebar'    => esc_html__( 'Single Post Sidebar', 'martfury' ),
+		'page-sidebar'    => esc_html__( 'Page Sidebar', 'martfury' ),
+		'catalog-sidebar' => esc_html__( 'Catalog Sidebar', 'martfury' ),
+		'product-sidebar' => esc_html__( 'Single Product Sidebar', 'martfury' ),
+		'footer-links'    => esc_html__( 'Footer Links', 'martfury' ),
+	);
+
+	if ( class_exists( 'WC_Vendors' ) || class_exists( 'WCMp' ) ) {
+		$sidebars['vendor_sidebar'] = esc_html( 'Vendor Sidebar', 'martfury' );
+	}
+
+	// Register footer sidebars
+	for ( $i = 1; $i <= 6; $i ++ ) {
+		$sidebars["footer-sidebar-$i"] = esc_html__( 'Footer', 'martfury' ) . " $i";
+	}
+
+	// Register sidebars
+	foreach ( $sidebars as $id => $name ) {
+		register_sidebar(
+			array(
+				'name'          => $name,
+				'id'            => $id,
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h4 class="widget-title">',
+				'after_title'   => '</h4>',
+			)
+		);
+	}
+
+}
+add_action( 'widgets_init', 'pardus_register_sidebars' );

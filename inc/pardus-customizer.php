@@ -120,8 +120,17 @@ function pardus_customize_settings() {
 	); // End array $panels
  $sections = array(
 		// Header
+  // Header top bar
 		'header_top_bar'                   => array(
 			'title'       => esc_html__( 'Header Top Bar', 'pardusthecat' ),
+			'description' => '',
+			'priority'    => 10,
+			'capability'  => 'edit_theme_options',
+			'panel'       => 'header',
+		),
+  // Header Navigation
+  'header_navigation'                   => array(
+			'title'       => esc_html__( 'Header Navigation', 'pardusthecat' ),
 			'description' => '',
 			'priority'    => 10,
 			'capability'  => 'edit_theme_options',
@@ -145,7 +154,7 @@ function pardus_customize_settings() {
 		'topbar_bg_color'                      => array(
    'type'            => 'color',
    'label'           => esc_html__( 'Background Color', 'pardusthecat' ),
-   'default'         => '',
+   'default'         => '#0062d0',
    'section'         => 'header_top_bar',
    'priority'        => 20,
    'active_callback' => array(
@@ -158,8 +167,29 @@ function pardus_customize_settings() {
 			'transport'       => 'auto',
 			'output'         => array(
 				array(
-					'element'  => '.header-top-bar',
+					'element'  => '#topbar',
 					'property' => 'background-color',
+				),
+			),
+  ),
+  'topbar_txt_color'                      => array(
+   'type'            => 'color',
+   'label'           => esc_html__( 'Text Color', 'pardusthecat' ),
+   'default'         => '#ffffff',
+   'section'         => 'header_top_bar',
+   'priority'        => 30,
+   'active_callback' => array(
+    array(
+     'setting'  => 'topbar',
+     'operator' => '==',
+     'value'    => '1',
+    ),
+   ),
+			'transport'       => 'auto',
+			'output'         => array(
+				array(
+					'element'  => '#topbar a',
+					'property' => 'color',
 				),
 			),
   ),
@@ -169,7 +199,7 @@ function pardus_customize_settings() {
    'label'       => esc_html__( 'Custom Top Bar Height', 'pardusthecat' ),
    'default'     => '0',
    'section'     => 'header_top_bar',
-   'priority'    => 30,
+   'priority'    => 40,
    'description' => esc_html__( 'Enable custom top bar height.', 'pardusthecat' ),
    'transport'       => 'auto',
   ),
@@ -179,7 +209,7 @@ function pardus_customize_settings() {
    'label'       => esc_html__( 'Top Bar Height', 'kirki' ),
    'description' => esc_html__( 'Set custom header topbar height.', 'kirki' ),
    'section'     => 'header_top_bar',
-   'priority'        => 40,
+   'priority'        => 50,
    'default'     => array(
    'height' => '100px', 
    ),
@@ -193,12 +223,26 @@ function pardus_customize_settings() {
 			'transport'       => 'auto',
 			'output'         => array(
 				array(
-					'element'  => '.header-height',
+					'element'  => '#topbar',
 
 				),
 			),
   ),  
-		// Top Bar
+		// Top Bar - Navigation
+  'header_nav'                      => array(
+   'type'            => 'color',
+   'label'           => esc_html__( 'Background Color', 'pardusthecat' ),
+   'default'         => '',
+   'section'         => 'header_navigation',
+   'priority'        => 20,
+   'transport'       => 'auto',
+			'output'         => array(
+				array(
+					'element'  => '.header-nav',
+					'property' => 'background-color',
+				),
+			),
+  ),
 
 
 

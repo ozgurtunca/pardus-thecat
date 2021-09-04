@@ -19,52 +19,21 @@
   <?php endif ?>
   <?php wp_head(); ?>
 </head>
-  
+
 <body <?php body_class(); ?>>
-  <div class="header-main">
-    <div class="header-container">
-      <div class="row header-row">
-  
-<div class="container">
-  <div class="row">
-    <div class="corow-xs-12">
-    <?php if ( true == get_theme_mod( 'topbar_toogle', true ) ) : ?>
-    <div class='top-bar header-top-bar header-height'>
-      <div class="container">
-        <div class="row">
-          This is Top Bar
+<div id="page">
+  <div id="topbar" class="topbar topbar-dark">
+    <div class="pardus-container">
+      <div class="row topbar-row">
+        <div class="topbar-left topbar-sidebar col-xs-12 col-sm-12 col-md-5 hidden-xs hidden-sm">
+        <?php if ( is_active_sidebar( 'topbar-left' ) ) {
+						dynamic_sidebar( 'topbar-left' );
+					} ?>
+        </div>
+        <div class="topbar-right topbar-sidebar col-xs-12 col-sm-12 col-md-7 hidden-xs hidden-sm">
+        This is TopBar Right
         </div>
       </div>
     </div>
-    <?php endif; ?>
-    <header class="header p-3">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <img src="<?php echo get_template_directory_uri() . '/img/logo.png'; ?>" width="50">
-        </a>
-        <nav class="nav col-12 col-lg-auto me-lg-auto mb-2 >
-        <?php 
-          wp_nav_menu( array(
-            'theme_location' => 'primary',
-            'container' => false,
-            'add_li_class'  => 'nav-link px-2',
-            'items_wrap' => '<ul class="justify-content-center mb-md-0">%3$s</ul>',
-          )); 
-        ?>
-        </nav>
-
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-        </form>
-
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
-        </div>
-      </div>
-    </div>
-  </header>
-    </div><!-- .corow-xs-12 -->
-  </div><!-- .header-container -->
-</div><!-- .col-xs-12 -->
+  </div>
+</div>
