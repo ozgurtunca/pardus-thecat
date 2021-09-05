@@ -37,9 +37,7 @@ function pardus_load_admin_scripts( $hook ){
 function pardus_load_scripts(){
     
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '5.1', 'all' );
-    wp_enqueue_style( 'raleway', 'https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap' );
     wp_enqueue_style( 'pardus', get_template_directory_uri() . '/css/pardus.css', array(), '1.0.0', 'all' );
-    wp_enqueue_style( 'pardus-icons', get_template_directory_uri() . '/css/pardus-icons.css', array(), '1.0.0', 'all' );
 
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery.js', false, '1.11.3', true );
