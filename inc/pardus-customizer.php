@@ -130,11 +130,11 @@ function pardus_customize_settings() {
  );
 
  $panels = array(
-		'general'      => array(
+		'general'    => array(
 			'priority' => 10,
 			'title'    => esc_html__( 'General', 'pardusthecat' ),
 		),
-		'header'       => array(
+		'header'     => array(
 			'priority' => 40,
 			'title'    => esc_html__( 'Header', 'pardusthecat' ),
 		),
@@ -170,168 +170,218 @@ function pardus_customize_settings() {
   // Fields
  $fields = array(
 		// Top Bar
-		'topbar'                                  => array(
-   'type'        => 'toggle',
-   'settings'    => 'topbar_toogle',
-   'label'       => esc_html__( 'Enable Top Bar', 'pardusthecat' ),
-   'default'     => '0',
-   'section'     => 'header_top_bar',
-   'priority'    => 10,
-   'description' => esc_html__( 'Enable fixed top bar in header section.', 'pardusthecat' ),
-   'transport'       => 'auto',
-  ),
+    'topbar'        => array(
+      'type'        => 'toggle',
+      'settings'    => 'topbar_toogle',
+      'label'       => esc_html__( 'Enable Top Bar', 'pardusthecat' ),
+      'default'     => '0',
+      'section'     => 'header_top_bar',
+      'priority'    => 10,
+      'description' => esc_html__( 'Enable fixed top bar in header section.', 'pardusthecat' ),
+      'transport'   => 'auto',
+    ),
+    'topbar_custom_styling'    => array(
+      'type'                    => 'toggle',
+      'settings'                => 'topbar_custom_styling',
+      'label'                   => esc_html__( 'Custom Top Bar Styling', 'pardusthecat' ),
+      'default'                 => '0',
+      'section'                 => 'header_top_bar',
+      'priority'                => 20,
+      'description'             => esc_html__( 'Enable custom top bar height.', 'pardusthecat' ),
+      'transport'               => 'auto',
+      ),
 		'topbar_bg_color'                      => array(
-   'type'            => 'color',
-   'label'           => esc_html__( 'Background Color', 'pardusthecat' ),
-   'default'         => '#0062d0',
-   'section'         => 'header_top_bar',
-   'priority'        => 20,
-   'active_callback' => array(
-    array(
-     'setting'  => 'topbar',
-     'operator' => '==',
-     'value'    => '1',
-    ),
-   ),
-			'transport'       => 'auto',
-			'output'         => array(
+      'type'            => 'color',
+      'label'           => esc_html__( 'Background Color', 'pardusthecat' ),
+      'default'         => '#0062d0',
+      'section'         => 'header_top_bar',
+      'priority'        => 30,
+      'active_callback' => array(
+        array(
+          'setting'  => 'topbar_custom_styling',
+          'operator' => '==',
+          'value'    => '1',
+        ),
+      ),
+			'transport'    => 'auto',
+			'output'       => array(
 				array(
 					'element'  => '#topbar',
 					'property' => 'background-color',
 				),
 			),
-  ),
-  'topbar_txt_color'                      => array(
-   'type'            => 'color',
-   'label'           => esc_html__( 'Text Color', 'pardusthecat' ),
-   'default'         => '#ffffff',
-   'section'         => 'header_top_bar',
-   'priority'        => 30,
-   'active_callback' => array(
-    array(
-     'setting'  => 'topbar',
-     'operator' => '==',
-     'value'    => '1',
     ),
-   ),
+    'topbar_txt_color'    => array(
+      'type'              => 'color',
+      'label'             => esc_html__( 'Text Color', 'pardusthecat' ),
+      'default'           => '#ffffff',
+      'section'           => 'header_top_bar',
+      'priority'          => 30,
+      'active_callback'   => array(
+        array(
+          'setting'       => 'topbar_custom_styling',
+          'operator'      => '==',
+          'value'         => '1',
+        ),
+      ),
+      'transport'    => 'auto',
+      'output'       => array(
+        array(
+          'element'  => '#topbar a',
+          'property' => 'color',
+        ),
+      ),
+    ),
+    'topbar_hover_color'  => array(
+      'type'              => 'color',
+      'label'             => esc_html__( 'Hover Color', 'pardusthecat' ),
+      'default'           => '#f1f1d6',
+      'section'           => 'header_top_bar',
+      'priority'          => 30,
+      'active_callback'   => array(
+        array(
+          'setting'       => 'topbar_custom_styling',
+          'operator'      => '==',
+          'value'         => '1',
+        ),
+      ),
+      'transport'    => 'auto',
+      'output'       => array(
+        array(
+          'element'  => '#topbar a:hover',
+          'property' => 'color',
+        ),
+      ),
+    ),
+   'topbar_divider_color'     => array(
+      'type'                  => 'color',
+      'label'                 => esc_html__( 'Divider Color', 'pardusthecat' ),
+      'default'               => '#ffffff',
+      'section'               => 'header_top_bar',
+      'priority'              => 30,
+      'active_callback'       => array(
+        array(
+          'setting'  => 'topbar_custom_styling',
+          'operator' => '==',
+          'value'    => '1',
+        ),
+      ),
+      'transport'    => 'auto',
+      'output'       => array(
+        array(
+          'element'  => '.widget::after',
+          'property' => 'background-color',
+        ),
+      ),
+    ),
+    'topbar_height'     => array(
+      'type'            => 'dimensions',
+      'settings'        => 'topbar_height',
+      'label'           => esc_html__( 'Top Bar Height', 'pardusthecat' ),
+      'description'     => esc_html__( 'Set custom header topbar height.', 'pardusthecat' ),
+      'section'         => 'header_top_bar',
+      'priority'        => 30,
+      'default'         => array(
+        'height'        => '', 
+      ),
+      'active_callback' => array(
+        array(
+          'setting'     => 'topbar_custom_styling',
+          'operator'    => '==',
+          'value'       => '1',
+        )
+      ),
 			'transport'       => 'auto',
-			'output'         => array(
+			'output'          => array(
 				array(
-					'element'  => '#topbar a',
-					'property' => 'color',
-				),
-			),
-  ),
-  'topbar_hover_color'                      => array(
-    'type'            => 'color',
-    'label'           => esc_html__( 'Hover Color', 'pardusthecat' ),
-    'default'         => '#f1f1d6',
-    'section'         => 'header_top_bar',
-    'priority'        => 40,
-    'active_callback' => array(
-     array(
-      'setting'  => 'topbar',
-      'operator' => '==',
-      'value'    => '1',
-     ),
-    ),
-       'transport'       => 'auto',
-       'output'         => array(
-         array(
-           'element'  => '#topbar a:hover',
-           'property' => 'color',
-         ),
-       ),
-   ),
-   'topbar_divider_color'                      => array(
-    'type'            => 'color',
-    'label'           => esc_html__( 'Divider Color', 'pardusthecat' ),
-    'default'         => '#ffffff',
-    'section'         => 'header_top_bar',
-    'priority'        => 50,
-    'active_callback' => array(
-     array(
-      'setting'  => 'topbar',
-      'operator' => '==',
-      'value'    => '1',
-     ),
-    ),
-       'transport'       => 'auto',
-       'output'         => array(
-         array(
-           'element'  => '.widget::after',
-           'property' => 'background-color',
-         ),
-       ),
-   ),
-  'topbar_custom_height'                                  => array(
-   'type'        => 'toggle',
-   'settings'    => 'topbar_custom_height',
-   'label'       => esc_html__( 'Custom Top Bar Height', 'pardusthecat' ),
-   'default'     => '0',
-   'section'     => 'header_top_bar',
-   'priority'    => 60,
-   'description' => esc_html__( 'Enable custom top bar height.', 'pardusthecat' ),
-   'transport'       => 'auto',
-  ),
-  'topbar_height'                      => array(
-   'type'        => 'dimensions',
-   'settings'    => 'dimensions_1',
-   'label'       => esc_html__( 'Top Bar Height', 'kirki' ),
-   'description' => esc_html__( 'Set custom header topbar height.', 'kirki' ),
-   'section'     => 'header_top_bar',
-   'priority'        => 70,
-   'default'     => array(
-   'height' => '100px', 
-   ),
-   'active_callback' => array(
-    array(
-     'setting'  => 'topbar_custom_height',
-     'operator' => '==',
-     'value'    => '1',
-    ),
-   ),
+					'element'     => '#topbar',
+				)
+      ),
+    ),  
+    'topbar_padding'     => array(
+      'type'            => 'dimensions',
+      'settings'        => 'topbar_padding',
+      'label'           => esc_html__( 'Top Bar Padding', 'pardusthecat' ),
+      'description'     => esc_html__( 'Set custom header topbar padding.', 'pardusthecat' ),
+      'section'         => 'header_top_bar',
+      'priority'        => 30,
+      'default'         => array(
+        'padding-top'    => '',
+        'padding-bottom' => '',
+        'padding-left'   => '',
+        'padding-right'  => '',
+      ),
+      'active_callback' => array(
+        array(
+          'setting'     => 'topbar_custom_styling',
+          'operator'    => '==',
+          'value'       => '1',
+        )
+      ),
 			'transport'       => 'auto',
-			'output'         => array(
+			'output'          => array(
 				array(
-					'element'  => '#topbar',
-
-				),
-			),
-  ),  
-  // Header 
-  // Header Layout
-  'header_layout'                           => array(
-    'type'     => 'select',
-    'settings' => 'header_layout',
-    'label'    => esc_html__( 'Header Layout', 'martfury' ),
-    'section'  => 'header_layout',
-    'default'  => '1',
-    'priority' => 10,
-    'choices'  => array(
-      '1' => esc_html__( 'Header 1', 'pardusthecat' ),
-      '2' => esc_html__( 'Header 2', 'pardusthecat' ),
-      '3' => esc_html__( 'Header 3', 'pardusthecat' ),
+					'element'     => '#topbar',
+				)
+      ),
     ),
-  ),
+    'topbar_margin'     => array(
+      'type'            => 'dimensions',
+      'settings'        => 'topbar_margin',
+      'label'           => esc_html__( 'Top Bar Margin', 'pardusthecat' ),
+      'description'     => esc_html__( 'Set custom header topbar margin.', 'pardusthecat' ),
+      'section'         => 'header_top_bar',
+      'priority'        => 30,
+      'default'         => array(
+        'margin-top'    => '',
+        'margin-bottom' => '',
+        'margin-left'   => '',
+        'margin-right'  => '',
+      ),
+      'active_callback' => array(
+        array(
+          'setting'     => 'topbar_custom_styling',
+          'operator'    => '==',
+          'value'       => '1',
+        )
+      ),
+			'transport'       => 'auto',
+			'output'          => array(
+				array(
+					'element'     => '#topbar',
+				)
+      ),
+    ),    
+    // Header 
+    // Header Layout
+    'header_layout'   => array(
+      'type'          => 'select',
+      'settings'      => 'header_layout',
+      'label'         => esc_html__( 'Header Layout', 'pardusthecat' ),
+      'section'       => 'header_layout',
+      'default'       => '1',
+      'priority'      => 10,
+      'choices'       => array(
+        '1' => esc_html__( 'Header 1', 'pardusthecat' ),
+        '2' => esc_html__( 'Header 2', 'pardusthecat' ),
+        '3' => esc_html__( 'Header 3', 'pardusthecat' ),
+      ),
+    ),
 		// Top Bar - Navigation
-  'header_nav'                      => array(
-   'type'            => 'color',
-   'label'           => esc_html__( 'Background Color', 'pardusthecat' ),
-   'default'         => '',
-   'section'         => 'header_navigation',
-   'priority'        => 20,
-   'transport'       => 'auto',
-			'output'         => array(
-				array(
-					'element'  => '.header-nav',
-					'property' => 'background-color',
-				),
-			),
-  ),
-
-
-
+    'header_nav'       => array(
+    'type'            => 'color',
+    'label'           => esc_html__( 'Background Color', 'pardusthecat' ),
+    'default'         => '',
+    'section'         => 'header_navigation',
+    'priority'        => 20,
+    'transport'       => 'auto',
+      'output'       => array(
+        array(
+          'element'  => '.header-nav',
+          'property' => 'background-color',
+        ),
+      ),
+    ),
 	);
  $settings['panels']   = apply_filters( 'pardusthecat_customize_panels', $panels );
 	$settings['sections'] = apply_filters( 'pardusthecat_customize_sections', $sections );
