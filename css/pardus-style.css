@@ -29,6 +29,23 @@
   font-size: 1.6rem;
 }
 
+.pardus-logo-text {
+  position: relative;
+  z-index: 20;
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 100;
+}
+
+.pardus-logo-text strong {
+  font-weight: 400;
+}
+
+.pardus-logo-text a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 * *::after *::before {
   margin: 0;
   padding: 0;
@@ -46,18 +63,55 @@ body {
   font-size: 1.6rem;
 }
 
+.t-left {
+  text-align: left;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-small {
+  font-size: 0.85rem;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.push-right {
+  margin-right: 20px;
+}
+
 .nav-container {
   position: absolute;
 }
 
+.site-header {
+  width: 100%;
+}
+
 .header-top-bar {
-  background-color: black;
+  background-color: #000000;
 }
 
 .header-container {
   position: relative;
   display: block;
-  height: 326px;
+  height: 45rem;
+  background-image: url("../img/headerbg.jpeg");
+  background-position: top left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
 }
 
 .topbar {
@@ -89,6 +143,16 @@ body {
 .pardus-container {
   width: 165rem;
   margin: 0 auto;
+}
+
+.header-content {
+  width: 100%;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .widget {

@@ -27,3 +27,21 @@
 .pardus-content {
 	font-size: 1.6rem;
 }
+
+// Logo Text
+.pardus-logo-text {
+	position: relative;
+	z-index: 20;
+	margin: 0;
+	font-size: 1.75rem;
+	font-weight: 100;
+}
+
+.pardus-logo-text strong {
+	font-weight: 400;
+}
+
+.pardus-logo-text a {
+	color: $white;
+	text-decoration: none;
+}
