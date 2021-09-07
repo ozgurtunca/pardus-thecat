@@ -1,108 +1,30 @@
-/*
-*   @package pardusthecat
+/**
+* @package pardusthecat
 *
 *
-*/
+**/
+// import styles
+// Absctracts
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/modules";
 
-/* Generic */
+// base
+@import "base/typography";
+@import "base/base";
+@import "base/utilities";
 
-body,
-html {
-	height: 100%;
-	margin: 0 auto;
-}
-body {
-}
-.row {
-	margin-left: -15px;
-	margin-right: -15px;
-}
-.top-bar {
-	width: 100%;
-	background-color: #0062d0;
-	color: white;
-	a {
-		text-decoration: none;
-	}
-}
-#topbar {
-	a {
-		text-decoration: none;
-	}
-	a:hover {
-		color: #f1f1d6;
-	}
-}
-.topbar-row {
-	display: flex;
-	align-items: center;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-}
-.topbar-sidebar {
-	padding-top: 17px;
-	padding-bottom: 17px;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	width: auto;
-}
-.widget {
-	margin-bottom: 0;
-	line-height: 1;
-	padding: 0 20px;
-	position: relative;
+// layout
+@import "layout/navigation";
+@import "layout/header";
+@import "layout/topbar";
+@import "layout/footer";
+@import "layout/grid";
 
-	&::after {
-		background-color: #e1e1e1;
-		width: 2px;
-		height: 14px;
-		content: "";
-		position: absolute;
-		right: 0;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-}
-.pardus-container {
-	width: 1650px;
-	margin: 0 auto;
-}
-.header-top-bar {
-	background-color: black;
-}
-.table {
-	display: table;
-	width: 100%;
-	height: 100%;
-	.table-cell {
-		display: table-cell;
-		width: 100%;
-		height: 0100%;
-		vertical-align: middle;
-	}
-}
+// components
+@import "components/button";
+@import "components/widget";
 
-.background-image {
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-/*  Header */
-.header-container {
-	position: relative;
-	display: block;
-	height: 326px;
-}
-.site-description {
-	font-size: 14px;
-	color: #fff;
-	margin-top: 1em;
-}
-.site-title {
-	color: #fff;
-	font-size: 80px;
-}
-.nav-container {
-	position: absolute;
-}
+// pages
+@import "pages/home";

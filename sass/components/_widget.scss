@@ -1,0 +1,43 @@
+.widget {
+	margin-bottom: 0;
+	line-height: 1;
+	padding: 0 2rem;
+	position: relative;
+
+	&::after {
+		background-color: $light-grey;
+		width: 2px;
+		height: 1.4rem;
+		content: "";
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+.widget .search-form {
+	position: relative;
+}
+
+.widget .search-form input {
+	width: 100%;
+	border: 1px solid $grey;
+	padding: 1rem 1.5rem;
+	padding-right: 5.5rem;
+	font-size: 1.4rem;
+}
+
+.widget .search-form button {
+	position: absolute;
+	height: 100%;
+	right: 0;
+	top: 0;
+	border: none;
+	width: 5rem;
+	padding-top: 5px;
+	color: $grey;
+	background-color: transparent;
+	cursor: pointer;
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}

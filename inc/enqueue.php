@@ -37,11 +37,13 @@ function pardus_load_admin_scripts( $hook ){
 function pardus_load_scripts(){
     
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '5.1', 'all' );
-    wp_enqueue_style( 'pardus', get_template_directory_uri() . '/css/pardus.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style( 'pardus', get_template_directory_uri() . '/css/pardus-style.css', array(), '1.0.0', 'all' );
 
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery.js', false, '1.11.3', true );
+    wp_enqueue_script('pardus-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '5.1', true );
+    
 }
 add_action( 'wp_enqueue_scripts', 'pardus_load_scripts',);

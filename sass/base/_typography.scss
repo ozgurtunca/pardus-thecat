@@ -1,0 +1,29 @@
+//Promotion header bar
+.promo-text {
+	color: $white;
+	width: 100%;
+	font-size: 1.6rem;
+}
+
+// Topbar text
+.topbar {
+	color: $white;
+	font-size: 1.6rem;
+	a {
+		text-decoration: none;
+		color: $white;
+	}
+}
+#topbar {
+	a {
+		text-decoration: none;
+	}
+	a:hover {
+		color: $beige;
+	}
+}
+
+//content
+.pardus-content {
+	font-size: 1.6rem;
+}

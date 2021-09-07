@@ -230,6 +230,14 @@ function pardus_customize_settings() {
           'element'  => '#topbar a',
           'property' => 'color',
         ),
+        array(
+          'element'  => '.topbar a',
+          'property' => 'color',
+        ),
+        array(
+          'element'  => '.topbar',
+          'property' => 'color',
+        ),
       ),
     ),
     'topbar_hover_color'  => array(
@@ -353,6 +361,16 @@ function pardus_customize_settings() {
       ),
     ),    
     // Header 
+    // Promobar toggle
+    'header_promo'   => array(
+      'type'          => 'toggle',
+      'settings'      => 'header_promo',
+      'label'         => esc_html__( 'Enable Promotion Bar', 'pardusthecat' ),
+      'section'       => 'header_layout',
+      'default'       => '0',
+      'priority'      => 10,
+      'transport'     => 'auto',
+    ),
     // Header Layout
     'header_layout'   => array(
       'type'          => 'select',
@@ -360,7 +378,7 @@ function pardus_customize_settings() {
       'label'         => esc_html__( 'Header Layout', 'pardusthecat' ),
       'section'       => 'header_layout',
       'default'       => '1',
-      'priority'      => 10,
+      'priority'      => 20,
       'choices'       => array(
         '1' => esc_html__( 'Header 1', 'pardusthecat' ),
         '2' => esc_html__( 'Header 2', 'pardusthecat' ),
