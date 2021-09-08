@@ -361,16 +361,7 @@ function pardus_customize_settings() {
       ),
     ),    
     // Header 
-    // Promobar toggle
-    'header_promo'   => array(
-      'type'          => 'toggle',
-      'settings'      => 'header_promo',
-      'label'         => esc_html__( 'Enable Promotion Bar', 'pardusthecat' ),
-      'section'       => 'header_layout',
-      'default'       => '0',
-      'priority'      => 10,
-      'transport'     => 'auto',
-    ),
+    
     // Header Layout
     'header_layout'   => array(
       'type'          => 'select',

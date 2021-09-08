@@ -1,9 +1,16 @@
 .topbar {
 	width: 100%;
 	background-color: $blue-primary;
+	display: inline-block;
 }
 
 .topbar-row {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.topnav-row {
 	display: flex;
 	align-items: center;
 	flex-wrap: nowrap;

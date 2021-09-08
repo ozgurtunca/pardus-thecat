@@ -1,8 +1,14 @@
-.row {
-	margin-left: -1.5rem;
-	margin-right: -1.5rem;
+.page {
+	align-items: center;
+	width: 100%;
+	text-align: center;
+	background-color: $beige;
 }
 .pardus-container {
 	width: 165rem;
 	margin: 0 auto;
+	padding: 0 2rem;
+}
+.row {
+	--bs-gutter-x: 0;
 }
