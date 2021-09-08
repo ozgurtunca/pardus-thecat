@@ -1,0 +1,47 @@
+//Promotion header bar
+.promo-text {
+	color: $white;
+	width: 100%;
+	font-size: 1.6rem;
+}
+
+// Topbar text
+.topbar {
+	color: $white;
+	font-size: 1.6rem;
+	a {
+		text-decoration: none;
+		color: $white;
+	}
+}
+#topbar {
+	a {
+		text-decoration: none;
+	}
+	a:hover {
+		color: $beige;
+	}
+}
+
+//content
+.pardus-content {
+	font-size: 1.6rem;
+}
+
+// Logo Text
+.pardus-logo-text {
+	position: relative;
+	z-index: 20;
+	margin: 0;
+	font-size: 1.75rem;
+	font-weight: 100;
+}
+
+.pardus-logo-text strong {
+	font-weight: 400;
+}
+
+.pardus-logo-text a {
+	color: $white;
+	text-decoration: none;
+}

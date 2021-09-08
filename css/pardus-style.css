@@ -1,0 +1,219 @@
+/**
+* @package pardusthecat
+*
+*
+**/
+.promo-text {
+  color: #ffffff;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.topbar {
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.topbar a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#topbar a {
+  text-decoration: none;
+}
+#topbar a:hover {
+  color: #f1f1d6;
+}
+
+.pardus-content {
+  font-size: 1.6rem;
+}
+
+.pardus-logo-text {
+  position: relative;
+  z-index: 20;
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 100;
+}
+
+.pardus-logo-text strong {
+  font-weight: 400;
+}
+
+.pardus-logo-text a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+* *::after *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+}
+
+.t-left {
+  text-align: left;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-small {
+  font-size: 0.85rem;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.push-right {
+  margin-right: 20px;
+}
+
+.nav-container {
+  position: absolute;
+}
+
+.site-header {
+  width: 100%;
+}
+
+.header-top-bar {
+  background-color: #000000;
+}
+
+.header-container {
+  position: relative;
+  display: block;
+  height: 45rem;
+  background-image: url("../img/headerbg.jpeg");
+  background-position: top left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.topbar {
+  width: 100%;
+  background-color: #0062d0;
+  display: inline-block;
+}
+
+.topbar-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.topnav-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.topbar-sidebar {
+  padding-top: 1.1rem;
+  padding-bottom: 1.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: auto;
+}
+
+.page {
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  background-color: #f1f1d6;
+}
+
+.pardus-container {
+  width: 165rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.row {
+  --bs-gutter-x: 0;
+}
+
+.header-content {
+  width: 100%;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.widget {
+  margin-bottom: 0;
+  line-height: 1;
+  position: relative;
+}
+.widget:not(:first-child) {
+  padding: 0 2rem;
+}
+.widget::after {
+  background-color: #e1e1e1;
+  width: 2px;
+  height: 1.4rem;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.widget .search-form {
+  position: relative;
+}
+
+.widget .search-form input {
+  width: 100%;
+  border: 1px solid #9d9d9d;
+  padding: 1rem 1.5rem;
+  padding-right: 5.5rem;
+  font-size: 1.4rem;
+}
+
+.widget .search-form button {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border: none;
+  width: 5rem;
+  padding-top: 5px;
+  color: #9d9d9d;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/*# sourceMappingURL=pardus-style.css.map */

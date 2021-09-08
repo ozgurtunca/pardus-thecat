@@ -1,0 +1,16 @@
+.site-header {
+	width: 100%;
+}
+.header-top-bar {
+	background-color: $black;
+}
+.header-container {
+	position: relative;
+	display: block;
+	height: 45rem;
+	background-image: url("../img/headerbg.jpeg");
+	background-position: top left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
