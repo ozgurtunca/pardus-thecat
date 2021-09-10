@@ -1,6 +1,6 @@
 .topbar {
 	width: 100%;
-	background-color: $blue-primary;
+	background-color: $p-color;
 	display: inline-block;
 }
 
@@ -10,14 +10,9 @@
 	flex-wrap: nowrap;
 	justify-content: space-between;
 }
-.topnav-row {
-	display: flex;
-	align-items: center;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-}
+
 .topbar-sidebar {
-	padding-top: 1.1rem;
+	padding-top: 1.7rem;
 	padding-bottom: 1.7rem;
 	display: flex;
 	flex-wrap: wrap;

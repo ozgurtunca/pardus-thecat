@@ -1,3 +1,48 @@
+@font-face {
+	font-family: "kaibart";
+	src: url("../fonts/kaibart.eot?49xiz");
+	src: url("../fonts/kaibart.eot?49xiz#iefix") format("embedded-opentype"),
+		url("../fonts/kaibart.ttf?49xiz") format("truetype"),
+		url("../fonts/kaibart.woff?49xiz") format("woff"),
+		url("../fonts/kaibart.svg?49xiz#kaibart") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+@font-face {
+	font-family: "Nueva";
+	src: url("../fonts/NuevaStd-BoldCond.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+.kaiba {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "kaibart" !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	vertical-align: middle;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.kaiba-logo:before {
+	content: "\e900";
+	color: #fff;
+	vertical-align: middle;
+	font-size: 5rem;
+}
+.navlogo {
+	font-size: 5rem;
+}
 //Promotion header bar
 .promo-text {
 	color: $white;
@@ -30,10 +75,15 @@
 
 // Logo Text
 .pardus-logo-text {
+	font-family: "Nueva";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 	position: relative;
 	z-index: 20;
-	margin: 0;
-	font-size: 1.75rem;
+	font-size: 5rem;
 	font-weight: 100;
 }
 
@@ -44,4 +94,10 @@
 .pardus-logo-text a {
 	color: $white;
 	text-decoration: none;
+}
+.logo {
+	vertical-align: middle;
+	font-size: 4rem;
+	color: $white;
+	padding: 0 10px;
 }

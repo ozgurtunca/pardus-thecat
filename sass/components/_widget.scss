@@ -2,9 +2,10 @@
 	margin-bottom: 0;
 	line-height: 1;
 	position: relative;
+	padding-right: 2rem;
 
 	&:not(:first-child) {
-		padding: 0 2rem;
+		padding-left: 2rem;
 	}
 
 	&::after {
@@ -14,6 +15,7 @@
 		content: "";
 		position: absolute;
 		right: 0;
+
 		top: 50%;
 		transform: translateY(-50%);
 	}

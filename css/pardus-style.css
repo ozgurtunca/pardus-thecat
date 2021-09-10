@@ -3,6 +3,47 @@
 *
 *
 **/
+@font-face {
+  font-family: "kaibart";
+  src: url("../fonts/kaibart.eot?49xiz");
+  src: url("../fonts/kaibart.eot?49xiz#iefix") format("embedded-opentype"), url("../fonts/kaibart.ttf?49xiz") format("truetype"), url("../fonts/kaibart.woff?49xiz") format("woff"), url("../fonts/kaibart.svg?49xiz#kaibart") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Nueva";
+  src: url("../fonts/NuevaStd-BoldCond.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+.kaiba {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "kaibart" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.kaiba-logo:before {
+  content: "\e900";
+  color: #fff;
+  vertical-align: middle;
+  font-size: 5rem;
+}
+
+.navlogo {
+  font-size: 5rem;
+}
+
 .promo-text {
   color: #ffffff;
   width: 100%;
@@ -22,7 +63,7 @@
   text-decoration: none;
 }
 #topbar a:hover {
-  color: #f1f1d6;
+  color: #e8e2ca;
 }
 
 .pardus-content {
@@ -30,10 +71,15 @@
 }
 
 .pardus-logo-text {
+  font-family: "Nueva";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
   position: relative;
   z-index: 20;
-  margin: 0;
-  font-size: 1.75rem;
+  font-size: 5rem;
   font-weight: 100;
 }
 
@@ -44,6 +90,13 @@
 .pardus-logo-text a {
   color: #ffffff;
   text-decoration: none;
+}
+
+.logo {
+  vertical-align: middle;
+  font-size: 4rem;
+  color: #ffffff;
+  padding: 0 10px;
 }
 
 * *::after *::before {
@@ -93,10 +146,38 @@ body {
 
 .nav-container {
   position: absolute;
+  width: 100%;
+}
+
+.topnav {
+  width: 100%;
+  background-color: rgba(33, 48, 105, 0.7);
+  display: inline-block;
+}
+
+.topnav-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.navbar-sidebar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
 }
 
 .site-header {
   width: 100%;
+  height: 450px;
+  background-image: url("../img/headerbg.jpeg");
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
 }
 
 .header-top-bar {
@@ -116,7 +197,7 @@ body {
 
 .topbar {
   width: 100%;
-  background-color: #0062d0;
+  background-color: #a82652;
   display: inline-block;
 }
 
@@ -127,15 +208,8 @@ body {
   justify-content: space-between;
 }
 
-.topnav-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-}
-
 .topbar-sidebar {
-  padding-top: 1.1rem;
+  padding-top: 1.7rem;
   padding-bottom: 1.7rem;
   display: flex;
   flex-wrap: wrap;
@@ -147,7 +221,7 @@ body {
   align-items: center;
   width: 100%;
   text-align: center;
-  background-color: #f1f1d6;
+  background-color: #e8e2ca;
 }
 
 .pardus-container {
@@ -174,9 +248,10 @@ body {
   margin-bottom: 0;
   line-height: 1;
   position: relative;
+  padding-right: 2rem;
 }
 .widget:not(:first-child) {
-  padding: 0 2rem;
+  padding-left: 2rem;
 }
 .widget::after {
   background-color: #e1e1e1;

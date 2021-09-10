@@ -1,7 +1,11 @@
 <div id="topnav" class="topnav">
     <div class="pardus-container">
         <div class="row topnav-row">
-            This is layout 1
+            <div class="navbar-sidebar">
+            <span class="kaiba"><span class="kaiba-logo"></span></span>
+            <span class="logo"><span><strong>Pardus</strong> The Cat</span></span>
+            </div>
+            
         </div>
     </div>
 </div>
